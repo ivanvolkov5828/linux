@@ -1,0 +1,23 @@
+user@user-VirtualBox:~$ uname
+Linux
+user@user-VirtualBox:~$ uname -a
+Linux user-VirtualBox 5.11.0-36-generic #40~20.04.1-Ubuntu SMP Sat Sep 18 02:14:19 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+user@user-VirtualBox:~$ hostnamectl
+   Static hostname: user-VirtualBox
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: d0e0185361f14c2ba181f694b2226cee
+           Boot ID: 5d4a4b42b5cb4bcd956cde4d928bf5d3
+    Virtualization: oracle
+  Operating System: Ubuntu 20.04.3 LTS
+            Kernel: Linux 5.11.0-36-generic
+      Architecture: x86-64
+user@user-VirtualBox:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.3 LTS
+Release:	20.04
+Codename:	focal
+user@user-VirtualBox:~$ whoami
+user
+
