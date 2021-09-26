@@ -1,0 +1,165 @@
+user@user-VirtualBox:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa):
+/home/user/.ssh/id_rsa already exists.
+Overwrite (y/n)?
+user@user-VirtualBox:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa):
+/home/user/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/user/.ssh/id_rsa
+Your public key has been saved in /home/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:t9j9S/JeCUsMjh/JKG5G3qh8tXFIyzWHZcKEc3F8Ctw user@user-VirtualBox
+The key's randomart image is:
++---[RSA 3072]----+
+|          =o+.   |
+|         o *.E . |
+|          o.* o  |
+|         .=++o   |
+|       oSo==o+   |
+|      + +X.+o o .|
+|       *o.*.o....|
+|    . +. .   = . |
+|     o.      .=. |
++----[SHA256]-----+
+user@user-VirtualBox:~$ ls -la
+итого 112
+drwxr-xr-x 19 user user 4096 сен 26 20:04  .
+drwxr-xr-x  3 root root 4096 сен 22 10:33  ..
+-rw-------  1 user user   85 сен 22 20:59  .bash_history
+-rw-r--r--  1 user user  220 сен 22 10:33  .bash_logout
+-rw-r--r--  1 user user 3771 сен 22 10:33  .bashrc
+drwx------ 13 user user 4096 сен 26 12:40  .cache
+drwx------ 13 user user 4096 сен 22 20:46  .config
+drwxrwxr-x  3 user user 4096 сен 26 19:46  dir1
+drwx------  3 user user 4096 сен 22 20:19  .gnupg
+drwxrwxr-x  2 user user 4096 сен 26 19:41  lesson_2
+drwxrwxr-x  3 user user 4096 сен 26 19:47  lesson_2.2
+lrwxrwxrwx  1 user user   20 сен 22 20:53  ______linux -> /media/sf______linux
+drwxr-xr-x  3 user user 4096 сен 22 20:19  .local
+drwx------  5 user user 4096 сен 22 20:27  .mozilla
+-rw-r--r--  1 user user  807 сен 22 10:33  .profile
+drwx------  2 user user 4096 сен 26 20:11  .ssh
+-rw-r--r--  1 user user    0 сен 22 20:39  .sudo_as_admin_successful
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-clipboard.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-display-svga-x11.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-draganddrop.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-seamless.pid
+-rw-------  1 user user 2062 сен 26 19:40  .viminfo
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Видео
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Документы
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Загрузки
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Изображения
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Музыка
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Общедоступные
+drwxr-xr-x  2 user user 4096 сен 22 20:19 'Рабочий стол'
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Шаблоны
+user@user-VirtualBox:~$ /.ssh
+bash: /.ssh: Нет такого файла или каталога
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ /.ssh
+bash: /.ssh: Нет такого файла или каталога
+user@user-VirtualBox:~$ /.ssh/id_rsa
+bash: /.ssh/id_rsa: Нет такого файла или каталога
+user@user-VirtualBox:~$ .ssh
+
+Команда «.ssh» не найдена. Возможно, вы имели в виду:
+
+  command 'ssh' from deb openssh-client (1:8.2p1-4ubuntu0.3)
+  command 'bssh' from deb avahi-ui-utils (0.7-4ubuntu7.1)
+  command 'mssh' from deb mssh (2.2-5)
+  command 'sssh' from deb guile-ssh (0.11.3-2)
+  command 'zssh' from deb zssh (1.5c.debian.1-7build2)
+  command 'cssh' from deb clusterssh (4.14-1)
+
+Try: sudo apt install <deb name>
+
+user@user-VirtualBox:~$ cat .ssh
+cat: .ssh: Это каталог
+user@user-VirtualBox:~$ cd .ssh
+user@user-VirtualBox:~/.ssh$ ls
+id_rsa  id_rsa.pub
+user@user-VirtualBox:~/.ssh$ cat id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+user@user-VirtualBox:~/.ssh$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDSbtImdOqYNlY7z7owjIPQjcUh375L5zzKQ6Fm8voutbGdkPHzE+6K2OKICbxnTpfFc5IPfx4w6fr+udo3+NMt1IIdW8/u0Z2YSi/GUZ4YyG0Jkgc7rxbtW9/UNXlTEPJ+rk0lnNqEFglEGl2elh5/Jm5jj1VVXukJOdDX0mVWU0wpVbWH03GCL3RGW8ptijFfSqtM2Ai5u4LJwQK3wmiKKZ8DBp5qzuQd6YRHVjkGSPfLTvcuAxrRdv6JpsS4SxGX5FyYZTECchBFigXc2A6IerQkhWIx9BIk60GD6/a8yOFi5NYYsVjsarmexCpZ4JF4XBFdRIW3+HZrXdqdrQOus3jdqlT1ArTy7wWov5uCl63qFtwHpwrxU1k1sxv0bvMDbG5Ktoy9OB6JKZ9shp5dRG4tW5zc3LHVTugOyFaxmbbmvYdv7LhjpYBjVJYct3vOj5ck9M3vuUW2fho+l21XHYdhQluILm6EW8e9bIeZXfB39weye6fsNpVSGlqOxa8= user@user-VirtualBox
+user@user-VirtualBox:~/.ssh$ ssh-copy-id user@user-VirtualBox
+The authenticity of host 'user-virtualbox (127.0.1.1)' can't be established.
+ECDSA key fingerprint is SHA256:quQkSAyBSIb10Ph/0W4NYUlOecVryBXm3elqO2kvXVU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+user@user-virtualbox's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'user@user-VirtualBox'"
+and check to make sure that only the key(s) you wanted were added.
+
+user@user-VirtualBox:~/.ssh$ cd..
+cd..: команда не найдена
+user@user-VirtualBox:~/.ssh$ cd ..
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ ssh user@user-VirtualBox
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+54 updates can be applied immediately.
+31 of these updates are standard security updates.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+Last login: Sun Sep 26 18:00:11 2021 from 172.21.48.1
+user@user-VirtualBox:~$ sudo vim /etc/ssh/sshd_config
+[sudo] пароль для user:
+Попробуйте ещё раз.
+[sudo] пароль для user:
+user@user-VirtualBox:~$ sudo service ssh restart
+user@user-VirtualBox:~$
+
