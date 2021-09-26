@@ -1,0 +1,179 @@
+
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ # создадим папку для нашего файла
+user@user-VirtualBox:~$ mkdir lesson_2
+user@user-VirtualBox:~$ ls -la
+итого 96
+drwxr-xr-x 16 user user 4096 сен 26 19:21  .
+drwxr-xr-x  3 root root 4096 сен 22 10:33  ..
+-rw-------  1 user user   85 сен 22 20:59  .bash_history
+-rw-r--r--  1 user user  220 сен 22 10:33  .bash_logout
+-rw-r--r--  1 user user 3771 сен 22 10:33  .bashrc
+drwx------ 13 user user 4096 сен 26 12:40  .cache
+drwx------ 13 user user 4096 сен 22 20:46  .config
+drwx------  3 user user 4096 сен 22 20:19  .gnupg
+drwxrwxr-x  2 user user 4096 сен 26 19:21  lesson_2
+lrwxrwxrwx  1 user user   20 сен 22 20:53  ______linux -> /media/sf______linux
+drwxr-xr-x  3 user user 4096 сен 22 20:19  .local
+drwx------  5 user user 4096 сен 22 20:27  .mozilla
+-rw-r--r--  1 user user  807 сен 22 10:33  .profile
+-rw-r--r--  1 user user    0 сен 22 20:39  .sudo_as_admin_successful
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-clipboard.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-display-svga-x11.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-draganddrop.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-seamless.pid
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Видео
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Документы
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Загрузки
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Изображения
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Музыка
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Общедоступные
+drwxr-xr-x  2 user user 4096 сен 22 20:19 'Рабочий стол'
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Шаблоны
+user@user-VirtualBox:~$ cd lesson_2
+user@user-VirtualBox:~/lesson_2$ ls -la
+итого 8
+drwxrwxr-x  2 user user 4096 сен 26 19:21 .
+drwxr-xr-x 16 user user 4096 сен 26 19:21 ..
+user@user-VirtualBox:~/lesson_2$ cat > file1.txt
+1 2 3 4 5 Xd
+3123
+YES!
+NO!
+Wtf?
+das
+dasdas
+dsa
+d
+as<
+user@user-VirtualBox:~/lesson_2$ ls
+file1.txt
+user@user-VirtualBox:~/lesson_2$ echo file2.txt
+file2.txt
+user@user-VirtualBox:~/lesson_2$ ls
+file1.txt
+user@user-VirtualBox:~/lesson_2$ # забыл стрелку
+user@user-VirtualBox:~/lesson_2$ echo > file2.txt
+user@user-VirtualBox:~/lesson_2$ ls
+file1.txt  file2.txt
+user@user-VirtualBox:~/lesson_2$ touch file3.txt
+user@user-VirtualBox:~/lesson_2$ ls
+file1.txt  file2.txt  file3.txt
+user@user-VirtualBox:~/lesson_2$ > file4.txt
+user@user-VirtualBox:~/lesson_2$ ls
+file1.txt  file2.txt  file3.txt  file4.txt
+user@user-VirtualBox:~/lesson_2$ cat file1.txt
+АХА1 2 3 4 5 Xd
+3123
+YES!
+NO!
+Wtf?
+das
+dasdas
+dsa
+d
+as<
+дuser@user-VirtualBox:~/lesson_2$ cat file2.txt
+
+user@user-VirtualBox:~/lesson_2$ cat file3.txt
+user@user-VirtualBox:~/lesson_2$ cat file4.txt
+user@user-VirtualBox:~/lesson_2$ sudo apt install vim -y
+[sudo] пароль для user:
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Уже установлен пакет vim самой новой версии (2:8.1.2269-1ubuntu5).
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 60 пакетов не обновлено.
+user@user-VirtualBox:~/lesson_2$ vim myfile:
+user@user-VirtualBox:~/lesson_2$ user@user-VirtualBox:~/lesson_2$ vim file1.txt
+user@user-VirtualBox:~/lesson_2$ user@user-VirtualBox:~/lesson_2$ vim file3.txt
+user@user-VirtualBox:~/lesson_2$ cat file3.txt
+Пишу текст в третьем файле !
+123
+123
+Вау!
+Редактор Vim
+user@user-VirtualBox:~/lesson_2$ #записали данные в третий файл с помощью редактора vim
+user@user-VirtualBox:~/lesson_2$ nano file4.txt
+user@user-VirtualBox:~/lesson_2$ user@user-VirtualBox:~/lesson_2$ cat file4.txt
+Редактируем файл 4 с помощью редактора nano
+Тут гораздо удобнее чем в vin
+123 345
+777
+
+user@user-VirtualBox:~/lesson_2$ ls -la
+итого 24
+drwxrwxr-x  2 user user 4096 сен 26 19:41 .
+drwxr-xr-x 16 user user 4096 сен 26 19:40 ..
+-rw-rw-r--  1 user user   63 сен 26 19:28 file1.txt
+-rw-rw-r--  1 user user    1 сен 26 19:31 file2.txt
+-rw-rw-r--  1 user user   89 сен 26 19:40 file3.txt
+-rw-rw-r--  1 user user  140 сен 26 19:41 file4.txt
+user@user-VirtualBox:~/lesson_2$ pwd
+/home/user/lesson_2
+user@user-VirtualBox:~/lesson_2$ # создадим еще одну папку
+user@user-VirtualBox:~/lesson_2$ cd ..
+user@user-VirtualBox:~$ ls
+ lesson_2      Видео       Загрузки      Музыка         'Рабочий стол'
+ ______linux   Документы   Изображения   Общедоступные   Шаблоны
+user@user-VirtualBox:~$ mkdir lesson_2.2
+user@user-VirtualBox:~$ ls
+ lesson_2     ______linux   Документы   Изображения   Общедоступные   Шаблоны
+ lesson_2.2   Видео         Загрузки    Музыка       'Рабочий стол'
+user@user-VirtualBox:~$ cd lesson_2.2
+user@user-VirtualBox:~/lesson_2.2$ mkdir /dir1/dir2/
+mkdir: невозможно создать каталог «/dir1/dir2/»: Нет такого файла или каталога
+user@user-VirtualBox:~/lesson_2.2$ mkdir -p /dir1/dir2/
+mkdir: невозможно создать каталог «/dir1»: Отказано в доступе
+user@user-VirtualBox:~/lesson_2.2$ mkdir -p /home/user/dir1/dir2/
+user@user-VirtualBox:~/lesson_2.2$ cd..
+cd..: команда не найдена
+user@user-VirtualBox:~/lesson_2.2$ cd ..
+user@user-VirtualBox:~$ ls
+ dir1       lesson_2.2    Видео       Загрузки      Музыка         'Рабочий стол'
+ lesson_2   ______linux   Документы   Изображения   Общедоступные   Шаблоны
+user@user-VirtualBox:~$ mkdir -p /home/user/lesson_2.2/dir1/dir2/
+user@user-VirtualBox:~$ cd lesson_2.2
+user@user-VirtualBox:~/lesson_2.2$ ls
+dir1
+user@user-VirtualBox:~/lesson_2.2$ tree
+.
+└── dir1
+    └── dir2
+
+2 directories, 0 files
+user@user-VirtualBox:~/lesson_2.2$ cp /home/user/lesson_2/file3.txt /home/user/lesson_2.2/dir1/dir2/
+user@user-VirtualBox:~/lesson_2.2$ cd dir1
+user@user-VirtualBox:~/lesson_2.2/dir1$ cd dir2
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ ls
+file3.txt
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ # получилось скопировать из одной папки в другую
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ cat file3.txt
+Пишу текст в третьем файле !
+123
+123
+Вау!
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ cp /home/user/lesson_2/file4.txt /home/user/lesson_2.2/dir1/
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ cd..
+cd..: команда не найдена
+user@user-VirtualBox:~/lesson_2.2/dir1/dir2$ cd ..
+user@user-VirtualBox:~/lesson_2.2/dir1$ cd ..
+user@user-VirtualBox:~/lesson_2.2$ tree
+.
+└── dir1
+    ├── dir2
+    │   └── file3.txt
+    └── file4.txt
+
+2 directories, 2 files
+user@user-VirtualBox:~/lesson_2.2$ mv /home/user/lesson_2.2/dir1/file4.txt /home/user/lesson_2.2/dir1/dir2/
+user@user-VirtualBox:~/lesson_2.2$ tree
+.
+└── dir1
+    └── dir2
+        ├── file3.txt
+        └── file4.txt
+
+2 directories, 2 files
+user@user-VirtualBox:~/lesson_2.2$
