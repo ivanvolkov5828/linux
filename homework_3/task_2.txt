@@ -1,0 +1,67 @@
+user@user-VirtualBox:~$ user@user-VirtualBox:~$ sudo addgroup homework
+Добавляется группа «homework» (GID 1003) ...
+Готово.
+user@user-VirtualBox:~$ tail /etc/group
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:998:user
+user2:x:1002:
+user2003:x:1001:
+homework:x:1003:
+user@user-VirtualBox:~$ ls /home
+user  user2  user2003
+user@user-VirtualBox:~$ sudo usermod -aG homework user
+user@user-VirtualBox:~$ sudo usermod -aG homework user2
+user@user-VirtualBox:~$ sudo usermod -aG homework user2003
+user@user-VirtualBox:~$ groups user
+user : user adm cdrom sudo dip plugdev lpadmin lxd sambashare vboxsf homework
+user@user-VirtualBox:~$ tail /etc/group
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:998:user
+user2:x:1002:
+user2003:x:1001:
+homework:x:1003:user,user2,user2003
+user@user-VirtualBox:~$ sudo groupdel homework
+user@user-VirtualBox:~$ tail /etc/group
+pulse-access:x:129:
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:998:user
+user2:x:1002:
+user2003:x:1001:
+user@user-VirtualBox:~$ groups user2003
+user2003 : user2003 sudo
+user@user-VirtualBox:~$ sudo usermod -g my_group user2003
+usermod: группа «my_group» не существует
+user@user-VirtualBox:~$ sudo addgroup my_group
+Добавляется группа «my_group» (GID 1003) ...
+Готово.
+user@user-VirtualBox:~$ sudo usermod -g my_group user2003
+user@user-VirtualBox:~$ groups user2003
+user2003 : my_group sudo
+user@user-VirtualBox:~$ #сменили группу у пользователя user2003
+user@user-VirtualBox:~$ sudo groupdel my_group
+groupdel: не удалось удалить первичную группу пользователя «user2003»
+user@user-VirtualBox:~$ #)
+user@user-VirtualBox:~$ groups user2003
+user2003 : my_group sudo
+user@user-VirtualBox:~$ sudo usermod -G my_group user2003
+user@user-VirtualBox:~$ groups user2003
+user2003 : my_group
+user@user-VirtualBox:~$ sudo vi /etc/group
+user@user-VirtualBox:~$ groups user2003
+user2003 : my_group new_group
+user@user-VirtualBox:~$ # создал вручную группу
