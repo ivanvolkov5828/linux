@@ -1,0 +1,136 @@
+user@user-VirtualBox:~$ user@user-VirtualBox:~$ sudo adduser super
+Добавляется пользователь «super» ...
+Добавляется новая группа «super» (1005) ...
+Добавляется новый пользователь «super» (1003) в группу «super» ...
+Создаётся домашний каталог «/home/super» ...
+Копирование файлов из «/etc/skel» ...
+Новый пароль :
+Повторите ввод нового пароля :
+Пароль не указан
+Новый пароль :
+Повторите ввод нового пароля :
+Пароль не указан
+Новый пароль :
+Повторите ввод нового пароля :
+Пароль не указан
+passwd: Ошибка при операциях с маркером проверки подлинности
+passwd: пароль не изменён
+Попробовать ещё раз? [y/N]
+Изменение информации о пользователе super
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+        Полное имя []:
+        Номер комнаты []:
+        Рабочий телефон []:
+        Домашний телефон []:
+        Другое []:
+Данная информация корректна? [Y/n] Y
+user@user-VirtualBox:~$ ls /home
+super  user  user2  user2003
+user@user-VirtualBox:~$ sudo usermod -aG sudo super
+user@user-VirtualBox:~$ groups super
+super : super sudo
+user@user-VirtualBox:~$ # теперь у супер есть права суперпользователя, так как добавили его в группу sudo
+user@user-VirtualBox:~$ sudo su super
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+super@user-VirtualBox:/home/user$ whoami
+super
+super@user-VirtualBox:/home/user$ sudo apt apdate
+[sudo] пароль для super:
+Попробуйте ещё раз.
+[sudo] пароль для super:
+Попробуйте ещё раз.
+[sudo] пароль для super:
+sudo: 3 попытки ввода неправильного пароля
+super@user-VirtualBox:/home/user$ #xd забыл пароль ))
+super@user-VirtualBox:/home/user$ exit
+exit
+user@user-VirtualBox:~$ whoami
+user
+user@user-VirtualBox:~$ ls /etc/group
+/etc/group
+user@user-VirtualBox:~$ more /etc/group
+:wq
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,user
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:user
+floppy:x:25:
+tape:x:26:
+sudo:x:27:user,super
+audio:x:29:pulse
+dip:x:30:user
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:user
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+bluetooth:x:112:
+ssl-cert:x:113:
+uuidd:x:114:
+tcpdump:x:115:
+avahi-autoipd:x:116:
+rtkit:x:117:
+ssh:x:118:
+netdev:x:119:
+lpadmin:x:120:user
+avahi:x:121:
+scanner:x:122:saned
+saned:x:123:
+nm-openvpn:x:124:
+whoopsie:x:125:
+colord:x:126:
+geoclue:x:127:
+pulse:x:128:
+pulse-access:x:129:
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:998:user
+user2:x:1002:
+user2003:x:1001:
+new_group:x:1004:user2003
+my_group:x:1003:user2003
+super:x:1005:
+user@user-VirtualBox:~$ # sudo:x:27:user,super
+user@user-VirtualBox:~$ #
