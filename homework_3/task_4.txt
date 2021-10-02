@@ -1,0 +1,38 @@
+user@user-VirtualBox:~$ sudo adduser super_2
+[sudo] пароль для user:
+Добавляется пользователь «super_2» ...
+Добавляется новая группа «super_2» (1006) ...
+Добавляется новый пользователь «super_2» (1004) в группу «super_2» ...
+Создаётся домашний каталог «/home/super_2» ...
+Копирование файлов из «/etc/skel» ...
+Новый пароль :
+Повторите ввод нового пароля :
+passwd: пароль успешно обновлён
+Изменение информации о пользователе super_2
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+        Полное имя []:
+        Номер комнаты []:
+        Рабочий телефон []:
+        Домашний телефон []:
+        Другое []:
+Данная информация корректна? [Y/n] Y
+user@user-VirtualBox:~$ ls /home
+super  super_2  user  user2  user2003
+
+user@user-VirtualBox:~$ sudo visudo
+user@user-VirtualBox:~$ su super_2
+Пароль:
+su: Сбой при проверке подлинности
+user@user-VirtualBox:~$ sudo su super_2
+super_2@user-VirtualBox:/home/user$ whoami
+super_2
+super_2@user-VirtualBox:/home/user$ sudo deluser super
+[sudo] пароль для super_2:
+Удаляется пользователь «super» ...
+Предупреждение: в группе `super' больше никого нет.
+Готово.
+super_2@user-VirtualBox:/home/user$ #добавили команду deluser через visudo
+super_2@user-VirtualBox:/home/user$ sudo adduser lol
+Пользователю super_2 запрещено выполнять '/usr/sbin/adduser lol' с правами root на user-VirtualBox.
+super_2@user-VirtualBox:/home/user$ # а это не добавили, поэтому не выполняется
+super_2@user-VirtualBox:/home/user$
