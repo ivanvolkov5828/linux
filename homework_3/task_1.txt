@@ -1,0 +1,69 @@
+user@user-VirtualBox:~$  sudo useradd -s /bin/bash -m -d /home/user_hw user_hw
+[sudo] пароль для user:
+user@user-VirtualBox:~$ tail /etc/passwd
+gnome-initial-setup:x:124:65534::/run/gnome-initial-setup/:/bin/false
+gdm:x:125:130:Gnome Display Manager:/var/lib/gdm3:/bin/false
+sssd:x:126:131:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+user:x:1000:1000:user,,,:/home/user:/bin/bash
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+vboxadd:x:998:1::/var/run/vboxadd:/bin/false
+sshd:x:127:65534::/run/sshd:/usr/sbin/nologin
+user2:x:1002:1002::/home/user2:/bin/bash
+user2003:x:1001:1001:,,,:/home/user2003:/bin/bash
+user_hw:x:1003:1003::/home/user_hw:/bin/bash
+user@user-VirtualBox:~$ tail /etc/group
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:user
+user:x:1000:
+sambashare:x:133:user
+systemd-coredump:x:999:
+vboxsf:x:998:user
+user2:x:1002:
+user2003:x:1001:
+user_hw:x:1003:
+user@user-VirtualBox:~$ tail /etc/shadow
+tail: невозможно открыть '/etc/shadow' для чтения: Отказано в доступе
+user@user-VirtualBox:~$ sudo tail /etc/shadow
+gnome-initial-setup:*:18858:0:99999:7:::
+gdm:*:18858:0:99999:7:::
+sssd:*:18858:0:99999:7:::
+user:$6$T0qqMPxKUS4MRfYP$s.4Xinv2c75/eEAjdvvoEPMTKIUOUGx3tbHopmr.DJ4A8X4/zp6oyrayTXdjGKgkgqb0zcsh3pqnA2BDwpTD90:18892:0:99999:7:::
+systemd-coredump:!!:18892::::::
+vboxadd:!:18892::::::
+sshd:*:18896:0:99999:7:::
+user2:$6$RywyAN91javhYnOj$pebHsBPvO0pkmuvD.qaEuQZCB3TGBc3YfQjJ8YJk99AXwd8IuxrLi.7arSIItZf35JmlkHaT4E0oE4bJTbKDE/:18902:0:99999:7:::
+user2003:$6$0FWTlyuPCbatFcs2$7s2.ulDZxyMtvLrLNkkUENk4WrUUZs7aGjGwY2aZ8Hfm5BjOoDzOEl7VAH9VQUNUnVh71dxOnkm17LGfp6Th51:18902:0:99999:7:::
+user_hw:!:18902:0:99999:7:::
+user@user-VirtualBox:~$ group user_hw
+
+Команда «group» не найдена. Возможно, вы имели в виду:
+
+  command 'grop' from deb grop (2:0.10-1.1build1)
+  command 'groups' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+
+user@user-VirtualBox:~$ groups user_hw
+user_hw : user_hw
+user@user-VirtualBox:~$ userdel --help
+Использование: userdel [параметры] ПОЛЬЗОВАТЕЛЬ
+
+Параметры:
+  -f, --force                   удалять файлы, даже если они
+                                не принадлежат пользователю
+  -h, --help                    показать данное сообщение и закончить работу
+  -r, --remove                  удалить домашний каталог и почтовый ящик
+  -R, --root КАТ_CHROOT         каталог, в который выполняется chroot
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+      --extrausers              Use the extra users database
+  -Z, --selinux-user            удалить все пользовательские сопоставления
+                                SELinux для пользователя
+
+user@user-VirtualBox:~$ ls /home
+user  user2  user2003  user_hw
+user@user-VirtualBox:~$ sudo userdel -r user_hw
+userdel: почтовый ящик user_hw (/var/mail/user_hw) не найден
+user@user-VirtualBox:~$ ls /home
+user  user2  user2003
+user@user-VirtualBox:~$ # удалили пользовтеля и его домашний каталог
