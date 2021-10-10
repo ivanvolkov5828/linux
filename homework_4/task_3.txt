@@ -1,0 +1,28 @@
+user@user-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+[sudo] пароль для user:
+user@user-VirtualBox:~$ # PasswordAuthentication no
+user@user-VirtualBox:~$ systemctl restart sshd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Чтобы перезапустить «ssh.service», необходимо пройти аутентификацию.
+Authenticating as: user,,, (user)
+Password:
+==== AUTHENTICATION COMPLETE ===
+user@user-VirtualBox:~$ sudo nano /etc/ssh/sshd_config
+user@user-VirtualBox:~$ # PasswordAuthentication yes
+user@user-VirtualBox:~$ systemctl reload sshd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Чтобы заставить «ssh.service» перечитать конфигурацию, необходимо пройти аутентификацию.
+Authenticating as: user,,, (user)
+Password:
+==== AUTHENTICATION COMPLETE ===
+user@user-VirtualBox:~$ # Restart останвливает службу и заново запускает.
+Reload даёт команду службе перечитать файлы конфигурации без остановки работы.
+ cat > file_name | ps
+    PID TTY          TIME CMD
+   5134 pts/1    00:00:00 bash
+  44523 pts/1    00:00:00 cat
+  44524 pts/1    00:00:00 ps
+
+123
+12312
+3123

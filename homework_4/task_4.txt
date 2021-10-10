@@ -1,0 +1,12 @@
+user@user-VirtualBox:~$ ps ax|grep mc
+   1653 ?        Sl     0:00 /usr/libexec/ibus-memconf
+   2982 pts/0    S+     0:00 mc
+   2993 pts/1    S+     0:00 grep --color=auto mc
+user@user-VirtualBox:~$ kill -9 2982
+user@user-VirtualBox:~$ ps ax|grep mc
+   1653 ?        Sl     0:00 /usr/libexec/ibus-memconf
+   3119 pts/1    S+     0:00 grep --color=auto mc
+user@user-VirtualBox:~$
+
+
+

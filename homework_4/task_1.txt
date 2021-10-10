@@ -1,0 +1,197 @@
+user@user-VirtualBox:~$ user@user-VirtualBox:~$ echo 123 > file_for_homework
+user@user-VirtualBox:~$ ll
+итого 124
+drwxr-xr-x 19 user user 4096 окт 10 20:54  ./
+drwxr-xr-x  7 root root 4096 окт  2 15:51  ../
+-rw-------  1 user user 2628 окт 10 20:36  .bash_history
+-rw-r--r--  1 user user  220 сен 22 10:33  .bash_logout
+-rw-r--r--  1 user user 3771 сен 22 10:33  .bashrc
+drwx------ 13 user user 4096 сен 26 12:40  .cache/
+drwx------ 15 user user 4096 окт 10 20:25  .config/
+drwxrwxr-x  3 user user 4096 сен 26 19:46  dir1/
+-rw-rw-r--  1 user user    4 окт 10 20:54  file_for_homework
+drwx------  3 user user 4096 сен 22 20:19  .gnupg/
+drwxrwxr-x  2 user user 4096 сен 26 19:41  lesson_2/
+drwxrwxr-x  3 user user 4096 сен 26 19:47  lesson_2.2/
+lrwxrwxrwx  1 user user   20 сен 22 20:53  ______linux -> /media/sf______linux
+drwxr-xr-x  3 user user 4096 сен 22 20:19  .local/
+drwx------  5 user user 4096 сен 22 20:27  .mozilla/
+-rw-r--r--  1 user user  807 сен 22 10:33  .profile
+drwx------  2 user user 4096 сен 26 20:21  .ssh/
+-rw-r--r--  1 user user    0 сен 22 20:39  .sudo_as_admin_successful
+-r--r-----  1 root root    0 окт  2 15:21  super
+-rwx------  1 root root    4 окт  2 15:28  super.tmp.save*
+-r--r-----  1 root root    0 окт  2 15:23  user
+-rwx------  1 root root    1 окт  2 15:28  user.tmp.save*
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-clipboard.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-display-svga-x11.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-draganddrop.pid
+-rw-r-----  1 user user    5 сен 26 12:26  .vboxclient-seamless.pid
+-rw-------  1 user user 2062 сен 26 19:40  .viminfo
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Видео/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Документы/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Загрузки/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Изображения/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Музыка/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Общедоступные/
+drwxr-xr-x  2 user user 4096 сен 22 20:19 'Рабочий стол'/
+drwxr-xr-x  2 user user 4096 сен 22 20:19  Шаблоны/
+user@user-VirtualBox:~$ pwd
+/home/user
+user@user-VirtualBox:~$ ls
+ dir1                super            user.tmp.save   Музыка
+ file_for_homework   super.tmp.save   Видео           Общедоступные
+ lesson_2            task1_err.txt    Документы      'Рабочий стол'
+ lesson_2.2          task1.txt        Загрузки        Шаблоны
+ ______linux         user             Изображения
+user@user-VirtualBox:~$ cat /etc/* >file_for_homework.txt 2> error.txt
+user@user-VirtualBox:~$ ll file_for_homework.txt
+-rw-rw-r-- 1 user user 392340 окт 10 21:37 file_for_homework.txt
+user@user-VirtualBox:~$ head file_for_homework.txt
+# /etc/adduser.conf: `adduser' configuration.
+# See adduser(8) and adduser.conf(5) for full documentation.
+
+# The DSHELL variable specifies the default login shell on your
+# system.
+DSHELL=/bin/bash
+
+# The DHOME variable specifies the directory containing users' home
+# directories.
+DHOME=/home
+user@user-VirtualBox:~$ cat error.txt
+cat: /etc/acpi: Это каталог
+cat: /etc/alsa: Это каталог
+cat: /etc/alternatives: Это каталог
+cat: /etc/apm: Это каталог
+cat: /etc/apparmor: Это каталог
+cat: /etc/apparmor.d: Это каталог
+cat: /etc/apport: Это каталог
+cat: /etc/apt: Это каталог
+cat: /etc/avahi: Это каталог
+cat: /etc/bash_completion.d: Это каталог
+cat: /etc/binfmt.d: Это каталог
+cat: /etc/bluetooth: Это каталог
+cat: /etc/brlapi.key: Отказано в доступе
+cat: /etc/brltty: Это каталог
+cat: /etc/ca-certificates: Это каталог
+cat: /etc/calendar: Это каталог
+cat: /etc/chatscripts: Это каталог
+cat: /etc/console-setup: Это каталог
+cat: /etc/cracklib: Это каталог
+cat: /etc/cron.d: Это каталог
+cat: /etc/cron.daily: Это каталог
+cat: /etc/cron.hourly: Это каталог
+cat: /etc/cron.monthly: Это каталог
+cat: /etc/cron.weekly: Это каталог
+cat: /etc/cups: Это каталог
+cat: /etc/cupshelpers: Это каталог
+cat: /etc/dbus-1: Это каталог
+cat: /etc/dconf: Это каталог
+cat: /etc/default: Это каталог
+cat: /etc/depmod.d: Это каталог
+cat: /etc/dhcp: Это каталог
+cat: /etc/dictionaries-common: Это каталог
+cat: /etc/dpkg: Это каталог
+cat: /etc/emacs: Это каталог
+cat: /etc/environment.d: Это каталог
+cat: /etc/firefox: Это каталог
+cat: /etc/fonts: Это каталог
+cat: /etc/fwupd: Это каталог
+cat: /etc/gdb: Это каталог
+cat: /etc/gdm3: Это каталог
+cat: /etc/geoclue: Это каталог
+cat: /etc/ghostscript: Это каталог
+cat: /etc/glvnd: Это каталог
+cat: /etc/gnome: Это каталог
+cat: /etc/groff: Это каталог
+cat: /etc/grub.d: Это каталог
+cat: /etc/gshadow: Отказано в доступе
+cat: /etc/gshadow-: Отказано в доступе
+cat: /etc/gss: Это каталог
+cat: /etc/gtk-2.0: Это каталог
+cat: /etc/gtk-3.0: Это каталог
+cat: /etc/hp: Это каталог
+cat: /etc/ifplugd: Это каталог
+cat: /etc/init: Это каталог
+cat: /etc/init.d: Это каталог
+cat: /etc/initramfs-tools: Это каталог
+cat: /etc/insserv.conf.d: Это каталог
+cat: /etc/iproute2: Это каталог
+cat: /etc/kernel: Это каталог
+cat: /etc/ldap: Это каталог
+cat: /etc/ld.so.conf.d: Это каталог
+cat: /etc/libblockdev: Это каталог
+cat: /etc/libnl-3: Это каталог
+cat: /etc/libpaper.d: Это каталог
+cat: /etc/libreoffice: Это каталог
+cat: /etc/logcheck: Это каталог
+cat: /etc/logrotate.d: Это каталог
+cat: /etc/modprobe.d: Это каталог
+cat: /etc/modules-load.d: Это каталог
+cat: /etc/mysql: Это каталог
+cat: /etc/netplan: Это каталог
+cat: /etc/network: Это каталог
+cat: /etc/networkd-dispatcher: Это каталог
+cat: /etc/NetworkManager: Это каталог
+cat: /etc/newt: Это каталог
+cat: /etc/openvpn: Это каталог
+cat: /etc/opt: Это каталог
+cat: /etc/PackageKit: Это каталог
+cat: /etc/pam.d: Это каталог
+cat: /etc/pcmcia: Это каталог
+cat: /etc/perl: Это каталог
+cat: /etc/pki: Это каталог
+cat: /etc/pm: Это каталог
+cat: /etc/polkit-1: Это каталог
+cat: /etc/ppp: Это каталог
+cat: /etc/profile.d: Это каталог
+cat: /etc/pulse: Это каталог
+cat: /etc/python3: Это каталог
+cat: /etc/python3.8: Это каталог
+cat: /etc/rc0.d: Это каталог
+cat: /etc/rc1.d: Это каталог
+cat: /etc/rc2.d: Это каталог
+cat: /etc/rc3.d: Это каталог
+cat: /etc/rc4.d: Это каталог
+cat: /etc/rc5.d: Это каталог
+cat: /etc/rc6.d: Это каталог
+cat: /etc/rcS.d: Это каталог
+cat: /etc/rsyslog.d: Это каталог
+cat: /etc/sane.d: Это каталог
+cat: /etc/security: Это каталог
+cat: /etc/selinux: Это каталог
+cat: /etc/sensors.d: Это каталог
+cat: /etc/sgml: Это каталог
+cat: /etc/shadow: Отказано в доступе
+cat: /etc/shadow-: Отказано в доступе
+cat: /etc/skel: Это каталог
+cat: /etc/snmp: Это каталог
+cat: /etc/speech-dispatcher: Это каталог
+cat: /etc/ssh: Это каталог
+cat: /etc/ssl: Это каталог
+cat: /etc/sudoers: Отказано в доступе
+cat: /etc/sudoers.d: Это каталог
+cat: /etc/sysctl.d: Это каталог
+cat: /etc/systemd: Это каталог
+cat: /etc/terminfo: Это каталог
+cat: /etc/thermald: Это каталог
+cat: /etc/thunderbird: Это каталог
+cat: /etc/tmpfiles.d: Это каталог
+cat: /etc/ubuntu-advantage: Это каталог
+cat: /etc/udev: Это каталог
+cat: /etc/udisks2: Это каталог
+cat: /etc/ufw: Это каталог
+cat: /etc/update-manager: Это каталог
+cat: /etc/update-motd.d: Это каталог
+cat: /etc/update-notifier: Это каталог
+cat: /etc/UPower: Это каталог
+cat: /etc/usb_modeswitch.d: Это каталог
+cat: /etc/vim: Это каталог
+cat: /etc/vmware-tools: Это каталог
+cat: /etc/vulkan: Это каталог
+cat: /etc/wpa_supplicant: Это каталог
+cat: /etc/X11: Это каталог
+cat: /etc/xdg: Это каталог
+cat: /etc/xml: Это каталог
+user@user-VirtualBox:~$
+
