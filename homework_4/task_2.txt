@@ -1,0 +1,12 @@
+user@user-VirtualBox:~$ ll | cut -b 1-10 | sort | uniq
+drwx------
+drwxrwxr-x
+drwxr-xr-x
+lrwxrwxrwx
+-r--r-----
+-rw-------
+-rw-r-----
+-rw-r--r--
+-rw-rw-r--
+-rwx------
+итого
