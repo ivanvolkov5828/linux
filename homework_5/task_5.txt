@@ -1,0 +1,22 @@
+first@user-VirtualBox:/home/user/new_d/new_directory$ su user
+Пароль:
+user@user-VirtualBox:~/new_d/new_directory$ mkdir new_directory_2
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 16
+drwxrwsrwx 3 user   developer 4096 окт 13 18:42 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer   22 окт 13 18:34 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+drwxrwsr-x 2 user   developer 4096 окт 13 18:42 new_directory_2/
+user@user-VirtualBox:~/new_d/new_directory$ chmod +t new_directory_2
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 16
+drwxrwsrwx 3 user   developer 4096 окт 13 18:42 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer   22 окт 13 18:34 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+drwxrwxr-t 2 user   developer 4096 окт 13 18:42 new_directory_2/

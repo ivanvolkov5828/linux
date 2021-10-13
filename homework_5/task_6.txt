@@ -1,0 +1,37 @@
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 16
+drwxrwsrwx 3 user   developer 4096 окт 13 18:42 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer   22 окт 13 18:34 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+drwxrwxr-t 2 user   developer 4096 окт 13 18:42 new_directory_2/
+user@user-VirtualBox:~/new_d/new_directory$ mkdir project
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 20
+drwxrwsrwx 4 user   developer 4096 окт 13 18:58 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer   22 окт 13 18:34 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+drwxrwxr-t 2 user   developer 4096 окт 13 18:42 new_directory_2/
+drwxrwsr-x 2 user   developer 4096 окт 13 18:58 project/
+user@user-VirtualBox:~/new_d/new_directory$ echo '123321' > project/file1.txt
+user@user-VirtualBox:~/new_d/new_directory$ chmod -r project
+user@user-VirtualBox:~/new_d/new_directory$ ls -l project
+ls: невозможно открыть каталог 'project': Отказано в доступе
+user@user-VirtualBox:~/new_d/new_directory$ cat project/file1.txt
+123321
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 20
+drwxrwsrwx 4 user   developer 4096 окт 13 18:58 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer   22 окт 13 18:34 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+drwxrwxr-t 2 user   developer 4096 окт 13 18:42 new_directory_2/
+d-wx-wx--x 2 user   developer 4096 окт 13 18:59 project/
+user@user-VirtualBox:~/new_d/new_directory$
