@@ -1,0 +1,37 @@
+user@user-VirtualBox:~/new_d$ ll
+итого 20
+drwxrwxr-x  3 user user 4096 окт 13 17:09 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user   18 окт 13 17:05 file2.txt
+lrwxrwxrwx  1 user user    9 окт 13 17:06 file3 -> file1.txt
+-rw-rw-r--  1 user user   18 окт 13 17:05 file4
+drwxrwxr-x  2 user user 4096 окт 13 17:09 new_d_2/
+
+user@user-VirtualBox:~/new_d$ mv file2.txt 123.txt
+user@user-VirtualBox:~/new_d$ mv file3 456
+user@user-VirtualBox:~/new_d$ mv file4 789
+user@user-VirtualBox:~/new_d$ ll
+итого 20
+drwxrwxr-x  3 user user 4096 окт 13 17:12 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user   18 окт 13 17:05 123.txt
+lrwxrwxrwx  1 user user    9 окт 13 17:06 456 -> file1.txt
+-rw-rw-r--  1 user user   18 окт 13 17:05 789
+drwxrwxr-x  2 user user 4096 окт 13 17:09 new_d_2/
+user@user-VirtualBox:~/new_d$ mv 123.txt new_d_2
+user@user-VirtualBox:~/new_d$ mv 456 new_d_2
+user@user-VirtualBox:~/new_d$ mv 789 new_d_2
+user@user-VirtualBox:~/new_d$ ll
+итого 12
+drwxrwxr-x  3 user user 4096 окт 13 17:12 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+drwxrwxr-x  2 user user 4096 окт 13 17:12 new_d_2/
+user@user-VirtualBox:~/new_d$ cd new_d_2
+user@user-VirtualBox:~/new_d/new_d_2$ ll
+итого 16
+drwxrwxr-x 2 user user 4096 окт 13 17:12 ./
+drwxrwxr-x 3 user user 4096 окт 13 17:12 ../
+-rw-rw-r-- 1 user user   18 окт 13 17:05 123.txt
+lrwxrwxrwx 1 user user    9 окт 13 17:06 456 -> file1.txt
+-rw-rw-r-- 1 user user   18 окт 13 17:05 789
+user@user-VirtualBox:~/new_d/new_d_2$
