@@ -1,0 +1,109 @@
+user@user-VirtualBox:~/new_d$ user@user-VirtualBox:~/new_d$ #создал пользователя first и second
+user@user-VirtualBox:~/new_d$ #они оба в группе developer
+user@user-VirtualBox:~/new_d$ #создал папку new_directory для совместной работы
+user@user-VirtualBox:~/new_d$ ll
+итого 16
+drwxrwxr-x  4 user user 4096 окт 13 17:38 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user    0 окт 13 17:14 file1
+-rw-------  1 user user    0 окт 13 17:14 file2
+drwxrwxr-x  2 user user 4096 окт 13 17:12 new_d_2/
+drwxrwxrwx  2 user user 4096 окт 13 17:46 new_directory/
+user@user-VirtualBox:~/new_d$ cd new_directory
+user@user-VirtualBox:~/new_d/new_directory$ su first
+Пароль:
+first@user-VirtualBox:/home/user/new_d/new_directory$ touch file1_first
+first@user-VirtualBox:/home/user/new_d/new_directory$ touch file2_first
+first@user-VirtualBox:/home/user/new_d/new_directory$ ll
+итого 8
+drwxrwxrwx 2 user  user  4096 окт 13 17:48 ./
+drwxrwxr-x 4 user  user  4096 окт 13 17:38 ../
+-rw-rw-r-- 1 first first    0 окт 13 17:48 file1_first
+-rw-rw-r-- 1 first first    0 окт 13 17:48 file2_first
+first@user-VirtualBox:/home/user/new_d/new_directory$ su second
+Пароль:
+second@user-VirtualBox:/home/user/new_d/new_directory$ touch file1_second
+second@user-VirtualBox:/home/user/new_d/new_directory$ touch file2_second
+second@user-VirtualBox:/home/user/new_d/new_directory$ ll
+итого 8
+drwxrwxrwx 2 user   user   4096 окт 13 17:48 ./
+drwxrwxr-x 4 user   user   4096 окт 13 17:38 ../
+-rw-rw-r-- 1 first  first     0 окт 13 17:48 file1_first
+-rw-rw-r-- 1 second second    0 окт 13 17:48 file1_second
+-rw-rw-r-- 1 first  first     0 окт 13 17:48 file2_first
+-rw-rw-r-- 1 second second    0 окт 13 17:48 file2_second
+second@user-VirtualBox:/home/user/new_d$ su user
+Пароль:
+second@user-VirtualBox:/home/user/new_d/new_directory$ ll
+итого 8
+drwxrwxrwx 2 user   user   4096 окт 13 18:10 ./
+drwxrwxr-x 4 user   user   4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  first     0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second second    0 окт 13 18:09 file1_second*
+-rwxrwx--- 1 first  first     0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second second    0 окт 13 18:10 file2_second*
+second@user-VirtualBox:/home/user/new_d/new_directory$ chgrp developer ./
+chgrp: изменение группы для './': Операция не позволена
+second@user-VirtualBox:/home/user/new_d/new_directory$ cd .//
+second@user-VirtualBox:/home/user/new_d/new_directory$ cd../
+bash: cd../: Нет такого файла или каталога
+second@user-VirtualBox:/home/user/new_d/new_directory$ cd ../
+second@user-VirtualBox:/home/user/new_d$ su user
+Пароль:
+user@user-VirtualBox:~/new_d$ ll
+итого 16
+drwxrwxr-x  4 user user 4096 окт 13 17:38 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user    0 окт 13 17:14 file1
+-rw-------  1 user user    0 окт 13 17:14 file2
+drwxrwxr-x  2 user user 4096 окт 13 17:12 new_d_2/
+drwxrwxrwx  2 user user 4096 окт 13 18:10 new_directory/
+user@user-VirtualBox:~/new_d$ chgrp developer new_directory
+chgrp: изменение группы для 'new_directory': Операция не позволена
+user@user-VirtualBox:~/new_d$ sudo chgrp developer new_directory
+[sudo] пароль для user:
+user@user-VirtualBox:~/new_d$ sudo chmod g+s new_directory
+user@user-VirtualBox:~/new_d$ cd new_directory
+user@user-VirtualBox:~/new_d/new_directory$ ll
+итого 8
+drwxrwsrwx 2 user   developer 4096 окт 13 18:10 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  first        0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second second       0 окт 13 18:09 file1_second*
+-rwxrwx--- 1 first  first        0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second second       0 окт 13 18:10 file2_second*
+user@user-VirtualBox:~/new_d/new_directory$ su second
+Пароль:
+second@user-VirtualBox:/home/user/new_d/new_directory$ cat >> file1_first
+bash: file1_first: Отказано в доступе
+second@user-VirtualBox:/home/user/new_d/new_directory$ chgrp developer file1_second
+second@user-VirtualBox:/home/user/new_d/new_directory$ chgrp developer file2_second
+second@user-VirtualBox:/home/user/new_d/new_directory$ ll
+итого 8
+drwxrwsrwx 2 user   developer 4096 окт 13 18:10 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  first        0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:09 file1_second*
+-rwxrwx--- 1 first  first        0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+second@user-VirtualBox:/home/user/new_d/new_directory$ su first
+Пароль:
+first@user-VirtualBox:/home/user/new_d/new_directory$ chgrp developer file1_first
+first@user-VirtualBox:/home/user/new_d/new_directory$ chgrp developer file2_first
+first@user-VirtualBox:/home/user/new_d/new_directory$ ll
+итого 8
+drwxrwsrwx 2 user   developer 4096 окт 13 18:10 ./
+drwxrwxr-x 4 user   user      4096 окт 13 17:38 ../
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file1_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:09 file1_second*
+-rwxrwx--- 1 first  developer    0 окт 13 18:09 file2_first*
+-rwxrwx--- 1 second developer    0 окт 13 18:10 file2_second*
+first@user-VirtualBox:/home/user/new_d/new_directory$ cat >> file1_second
+123
+12412
+4
+124
+124
+1
+first@user-VirtualBox:/home/user/new_d/new_directory$ # изменили файл созданный втором пользователем
+first@user-VirtualBox:/home/user/new_d/new_directory$
