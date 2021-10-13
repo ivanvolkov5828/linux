@@ -1,0 +1,69 @@
+user@user-VirtualBox:~/new_d$ ll
+итого 8
+drwxrwxr-x  2 user user 4096 окт 13 16:33 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+user@user-VirtualBox:~/new_d$ cat > file1.txt
+123
+123
+hello,ivan
+user@user-VirtualBox:~/new_d$ ls
+file1.txt
+user@user-VirtualBox:~/new_d$ cp file1.txt file2.txt
+user@user-VirtualBox:~/new_d$ ls
+file1.txt  file2.txt
+user@user-VirtualBox:~/new_d$ ls -s file1.txt file3
+ls: невозможно получить доступ к 'file3': Нет такого файла или каталога
+4 file1.txt
+user@user-VirtualBox:~/new_d$ ll
+итого 16
+drwxrwxr-x  2 user user 4096 окт 13 16:37 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user   19 окт 13 16:35 file1.txt
+-rw-rw-r--  1 user user   19 окт 13 16:37 file2.txt
+user@user-VirtualBox:~/new_d$ ln -s file1.txt file3
+user@user-VirtualBox:~/new_d$ ll
+итого 16
+drwxrwxr-x  2 user user 4096 окт 13 16:41 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user   19 окт 13 16:35 file1.txt
+-rw-rw-r--  1 user user   19 окт 13 16:37 file2.txt
+lrwxrwxrwx  1 user user    9 окт 13 16:41 file3 -> file1.txt
+user@user-VirtualBox:~/new_d$ ln file1.txt file4
+user@user-VirtualBox:~/new_d$ ll
+итого 20
+drwxrwxr-x  2 user user 4096 окт 13 16:42 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  2 user user   19 окт 13 16:35 file1.txt
+-rw-rw-r--  1 user user   19 окт 13 16:37 file2.txt
+lrwxrwxrwx  1 user user    9 окт 13 16:41 file3 -> file1.txt
+-rw-rw-r--  2 user user   19 окт 13 16:35 file4
+user@user-VirtualBox:~/new_d$ ll -i
+итого 20
+529535 drwxrwxr-x  2 user user 4096 окт 13 16:42 ./
+288554 drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+529536 -rw-rw-r--  2 user user   19 окт 13 16:35 file1.txt
+529541 -rw-rw-r--  1 user user   19 окт 13 16:37 file2.txt
+529542 lrwxrwxrwx  1 user user    9 окт 13 16:41 file3 -> file1.txt
+529536 -rw-rw-r--  2 user user   19 окт 13 16:35 file4
+user@user-VirtualBox:~/new_d$ #  у 1 и 4 файлов одинаковые номера
+user@user-VirtualBox:~/new_d$ rm file1.txt
+user@user-VirtualBox:~/new_d$ ll
+итого 16
+drwxrwxr-x  2 user user 4096 окт 13 16:43 ./
+drwxr-xr-x 21 user user 4096 окт 13 16:33 ../
+-rw-rw-r--  1 user user   19 окт 13 16:37 file2.txt
+lrwxrwxrwx  1 user user    9 окт 13 16:41 file3 -> file1.txt
+-rw-rw-r--  1 user user   19 окт 13 16:35 file4
+user@user-VirtualBox:~/new_d$ cat file2.txt
+123
+123
+hello,ivan
+user@user-VirtualBox:~/new_d$ # файл копия, никак не зависит от того, что мы удалили
+user@user-VirtualBox:~/new_d$ cat file3
+cat: file3: Нет такого файла или каталога
+user@user-VirtualBox:~/new_d$ # мягкая ссылка опирается на имя файла который мы удалили, поэтому ничего не вывыодит
+user@user-VirtualBox:~/new_d$ cat file4
+123
+123
+hello,ivan
+user@user-VirtualBox:~/new_d$ # жесткая ссылка опирается на inode
