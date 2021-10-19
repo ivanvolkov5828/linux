@@ -1,0 +1,66 @@
+user@user-VirtualBox:~$ user@user-VirtualBox:~$ ls
+ dir1                    file_name    ______linux   super.tmp.save   user.tmp.save   Изображения     Шаблоны
+ error.txt               homework_6   new_d         task1_err.txt    Видео           Музыка
+ file_for_homework       lesson_2     numbers_2     task1.txt        Документы       Общедоступные
+ file_for_homework.txt   lesson_2.2   super         user             Загрузки       'Рабочий стол'
+user@user-VirtualBox:~$ cat numbers_2
+#!/bin/bash
+y=0
+while [ $y -lt 102 ]
+do
+   echo $y
+   y=$(( $y + 2 ))
+done
+user@user-VirtualBox:~$ bash numbers_2
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+user@user-VirtualBox:~$

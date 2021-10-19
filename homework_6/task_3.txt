@@ -1,0 +1,14 @@
+user@user-VirtualBox:~$ nano test.txt
+user@user-VirtualBox:~$ crontab -l
+
+user@user-VirtualBox:~$ crontab -e
+crontab: installing new crontab
+crontab: installing new crontab
+user@user-VirtualBox:~$ crontab -l
+
+
+10 * * * * cp test.txt test.txt.bak
+user@user-VirtualBox:~$ crontab -r
+user@user-VirtualBox:~$ crontab -l
+no crontab for user
+user@user-VirtualBox:~$

@@ -1,0 +1,67 @@
+user@user-VirtualBox:~$ ls
+ dir1                    file_name     new_d            task1.txt       Документы     Общедоступные
+ error.txt               lesson_2      super            user            Загрузки     'Рабочий стол'
+ file_for_homework       lesson_2.2    super.tmp.save   user.tmp.save   Изображения   Шаблоны
+ file_for_homework.txt   ______linux   task1_err.txt    Видео           Музыка
+user@user-VirtualBox:~$ cat > homework_6
+#!/bin/bash
+for n in {1..3}; do echo $USER ; done
+user@user-VirtualBox:~$ ll
+итого 928
+drwxr-xr-x 21 user user   4096 окт 19 20:59  ./
+drwxr-xr-x  9 root root   4096 окт 13 17:34  ../
+-rw-------  1 user user   5877 окт 10 23:28  .bash_history
+-rw-r--r--  1 user user    220 сен 22 10:33  .bash_logout
+-rw-r--r--  1 user user   3771 сен 22 10:33  .bashrc
+drwx------ 15 user user   4096 окт 11 00:04  .cache/
+drwx------ 16 user user   4096 окт 11 00:04  .config/
+drwxrwxr-x  3 user user   4096 сен 26 19:46  dir1/
+-rw-rw-r--  1 user user   5655 окт 10 21:37  error.txt
+-rw-rw-r--  1 user user      4 окт 10 20:54  file_for_homework
+-rw-rw-r--  1 user user 392340 окт 10 21:37  file_for_homework.txt
+-rw-rw-r--  1 user user     16 окт 10 22:37  file_name
+drwx------  3 user user   4096 окт 10 23:48  .gnupg/
+-rw-rw-r--  1 user user     56 окт 19 21:03  homework_6
+drwxrwxr-x  2 user user   4096 сен 26 19:41  lesson_2/
+drwxrwxr-x  3 user user   4096 сен 26 19:47  lesson_2.2/
+lrwxrwxrwx  1 user user     20 сен 22 20:53  ______linux -> /media/sf______linux/
+drwxr-xr-x  3 user user   4096 сен 22 20:19  .local/
+drwx------  5 user user   4096 сен 22 20:27  .mozilla/
+drwxrwxr-x  4 user user   4096 окт 13 17:38  new_d/
+-rw-r--r--  1 user user    807 сен 22 10:33  .profile
+drwx------  2 user user   4096 сен 26 20:21  .ssh/
+-rw-r--r--  1 user user      0 сен 22 20:39  .sudo_as_admin_successful
+-r--r-----  1 root root      0 окт  2 15:21  super
+-rwx------  1 root root      4 окт  2 15:28  super.tmp.save*
+-rw-rw-r--  1 user user   5655 окт 10 21:34  task1_err.txt
+-rw-rw-r--  1 user user 392340 окт 10 21:34  task1.txt
+drwx------  6 user user   4096 окт 10 23:34  .thunderbird/
+-r--r-----  1 root root      0 окт  2 15:23  user
+-rwx------  1 root root      1 окт  2 15:28  user.tmp.save*
+-rw-r-----  1 user user      5 окт 11 00:02  .vboxclient-clipboard.pid
+-rw-r-----  1 user user      5 окт 11 00:02  .vboxclient-display-svga-x11.pid
+-rw-r-----  1 user user      5 окт 11 00:02  .vboxclient-draganddrop.pid
+-rw-r-----  1 user user      5 окт 11 00:02  .vboxclient-seamless.pid
+-rw-------  1 user user   2062 сен 26 19:40  .viminfo
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Видео/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Документы/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Загрузки/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Изображения/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Музыка/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Общедоступные/
+drwxr-xr-x  2 user user   4096 сен 22 20:19 'Рабочий стол'/
+drwxr-xr-x  2 user user   4096 сен 22 20:19  Шаблоны/
+user@user-VirtualBox:~$ bash homework_6
+homework_6: строка 2: неожиданный конец файла во время поиска «"»
+homework_6: строка 3: синтаксическая ошибка: неожиданный конец файла
+user@user-VirtualBox:~$ nano homework_6
+user@user-VirtualBox:~$ user@user-VirtualBox:~$ bash homework_6
+user
+user
+user
+user@user-VirtualBox:~$ chmod u+x homework_6
+user@user-VirtualBox:~$ ./homework_6
+user
+user
+user
+user@user-VirtualBox:~$
