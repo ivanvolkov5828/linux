@@ -1,0 +1,36 @@
+user@user-VirtualBox:~$ sudo iptables -S
+[sudo] пароль для user:
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+user@user-VirtualBox:~$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+user@user-VirtualBox:~$ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+Fatal: can't open lock file /run/xtables.lock: Permission denied
+user@user-VirtualBox:~$ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+user@user-VirtualBox:~$ sudo iptables -A INPUT -p tcp --dport 20 -j ACCEPT
+user@user-VirtualBox:~$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ftp-data
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+user@user-VirtualBox:~$ sudo iptables -S
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 20 -j ACCEPT
+user@user-VirtualBox:~$

@@ -1,0 +1,149 @@
+user@user-VirtualBox:~$ apt-add-repository ppa:nginx/stable
+Ошибка: необходимо запускать с правами администратора
+user@user-VirtualBox:~$ sudo apt-add-repository ppa:nginx/stable
+[sudo] пароль для user:
+ This PPA contains the latest Stable Release version of the nginx web server software.
+
+**Only Non-End-of-Life Ubuntu Releases are supported in this PPA**
+
+**Development releases of Ubuntu are not officially supported by this PPA, and uploads for those will not be available until actual final releases for those versions**
+ Больше информации: https://launchpad.net/~nginx/+archive/ubuntu/stable
+Нажмите [ENTER] для продолжения или Ctrl-C, чтобы отменить добавление.
+
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu focal InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Пол:3 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [283 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [362 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [940 B]
+Сущ:8 http://ppa.launchpad.net/nginx/stable/ubuntu focal InRelease
+Пол:9 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [10,4 kB]
+Пол:10 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [29,0 kB]
+Пол:11 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [63,7 kB]
+Пол:12 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2 464 B]
+Получено 1 080 kB за 4с (240 kB/s)
+Чтение списков пакетов… Готово
+user@user-VirtualBox:~$ apt --help
+apt 2.0.6 (amd64)
+Использование: apt [параметры] команда
+
+apt — менеджер пакетов с интерфейсом командной строки. Он предоставляет
+команды для поиска и управления, а также запросов информации о пакетах.
+apt выполняет те же задачи, что и специализированные инструменты APT,
+например apt-get и apt-cache, но по умолчанию задействует параметры,
+которые больше подходят для интерактивного использования.
+
+Основные команды:
+  list - показать список пакетов на основе указанных имён
+  search - искать в описаниях пакетов
+  show - показать дополнительные данные о пакете
+  install - установить пакеты
+  reinstall - переустановить пакеты
+  remove - удалить пакеты
+  autoremove - автоматически удалить все неиспользуемые пакеты
+  update - обновить список доступных пакетов
+  upgrade - обновить систему, устанавливая/обновляя пакеты
+  full-upgrade - обновить систему, удаляя/устанавливая/обновляя пакеты
+  edit-sources - редактировать файл с источниками пакетов
+  satisfy - удовлетворить строки зависимостей
+
+Дополнительную информацию о доступных командах смотрите в apt(8).
+Параметры настройки и синтаксис описаны в apt.conf(5).
+Информацию о том, как настроить источники, можно найти в sources.list(5).
+Выбор пакетов и версий описывается в apt_preferences(5).
+Информация о безопасности доступна в apt-secure(8).
+                    В APT есть коровья СУПЕРСИЛА.
+user@user-VirtualBox:~$ sudo apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu focal InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu focal-updates InRelease
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu focal-backports InRelease
+Сущ:4 http://security.ubuntu.com/ubuntu focal-security InRelease
+Сущ:5 http://ppa.launchpad.net/nginx/stable/ubuntu focal InRelease
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Все пакеты имеют последние версии.
+user@user-VirtualBox:~$ cat /etc/apt/sources.list.d/nginx-ubuntu-stable-focal.list
+deb http://ppa.launchpad.net/nginx/stable/ubuntu focal main
+# deb-src http://ppa.launchpad.net/nginx/stable/ubuntu focal main
+user@user-VirtualBox:~$ sudo apt install nginx
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  linux-headers-5.11.0-36-generic linux-hwe-5.11-headers-5.11.0-36 linux-image-5.11.0-36-generic linux-modules-5.11.0-36-generic linux-modules-extra-5.11.0-36-generic
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  geoip-database libgeoip1 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libnginx-mod-stream-geoip nginx-common nginx-core
+Предлагаемые пакеты:
+  geoip-bin fcgiwrap nginx-doc
+Следующие НОВЫЕ пакеты будут установлены:
+  geoip-database libgeoip1 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libnginx-mod-stream-geoip nginx nginx-common nginx-core
+Обновлено 0 пакетов, установлено 10 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 3 960 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 12,8 MB.
+Хотите продолжить? [Д/н] Д
+Пол:1 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 nginx-common all 1.18.0-3ubuntu1+focal2 [68,6 kB]
+Пол:2 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 libnginx-mod-http-xslt-filter amd64 1.18.0-3ubuntu1+focal2 [43,0 kB]
+Пол:3 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 libnginx-mod-mail amd64 1.18.0-3ubuntu1+focal2 [72,9 kB]
+Пол:4 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 libnginx-mod-stream amd64 1.18.0-3ubuntu1+focal2 [97,5 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 geoip-database all 20191224-2 [3 029 kB]
+Пол:6 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 libnginx-mod-stream-geoip amd64 1.18.0-3ubuntu1+focal2 [40,4 kB]
+Пол:7 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 nginx-core amd64 1.18.0-3ubuntu1+focal2 [457 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 libgeoip1 amd64 1.6.12-6build1 [70,5 kB]
+Пол:9 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 libnginx-mod-http-image-filter amd64 1.18.0-3ubuntu1+focal2 [44,8 kB]
+Пол:10 http://ppa.launchpad.net/nginx/stable/ubuntu focal/main amd64 nginx all 1.18.0-3ubuntu1+focal2 [35,6 kB]
+Получено 3 960 kB за 5с (827 kB/s)
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета geoip-database.
+(Чтение базы данных … на данный момент установлено 231629 файлов и каталогов.)
+Подготовка к распаковке …/0-geoip-database_20191224-2_all.deb …
+Распаковывается geoip-database (20191224-2) …
+Выбор ранее не выбранного пакета libgeoip1:amd64.
+Подготовка к распаковке …/1-libgeoip1_1.6.12-6build1_amd64.deb …
+Распаковывается libgeoip1:amd64 (1.6.12-6build1) …
+Выбор ранее не выбранного пакета nginx-common.
+Подготовка к распаковке …/2-nginx-common_1.18.0-3ubuntu1+focal2_all.deb …
+Распаковывается nginx-common (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета libnginx-mod-http-xslt-filter.
+Подготовка к распаковке …/3-libnginx-mod-http-xslt-filter_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается libnginx-mod-http-xslt-filter (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета libnginx-mod-mail.
+Подготовка к распаковке …/4-libnginx-mod-mail_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается libnginx-mod-mail (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета libnginx-mod-stream.
+Подготовка к распаковке …/5-libnginx-mod-stream_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается libnginx-mod-stream (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета libnginx-mod-stream-geoip.
+Подготовка к распаковке …/6-libnginx-mod-stream-geoip_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается libnginx-mod-stream-geoip (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета nginx-core.
+Подготовка к распаковке …/7-nginx-core_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается nginx-core (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета libnginx-mod-http-image-filter.
+Подготовка к распаковке …/8-libnginx-mod-http-image-filter_1.18.0-3ubuntu1+focal2_amd64.deb …
+Распаковывается libnginx-mod-http-image-filter (1.18.0-3ubuntu1+focal2) …
+Выбор ранее не выбранного пакета nginx.
+Подготовка к распаковке …/9-nginx_1.18.0-3ubuntu1+focal2_all.deb …
+Распаковывается nginx (1.18.0-3ubuntu1+focal2) …
+Настраивается пакет nginx-common (1.18.0-3ubuntu1+focal2) …
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Настраивается пакет libgeoip1:amd64 (1.6.12-6build1) …
+Настраивается пакет geoip-database (20191224-2) …
+Настраивается пакет libnginx-mod-stream (1.18.0-3ubuntu1+focal2) …
+Настраивается пакет nginx-core (1.18.0-3ubuntu1+focal2) …
+ * Upgrading binary nginx                                                                                                                                                                                   [ OK ]
+Настраивается пакет libnginx-mod-mail (1.18.0-3ubuntu1+focal2) …#############################################################################################..................................................]
+Настраивается пакет nginx (1.18.0-3ubuntu1+focal2) …##################################################################################################################.........................................]
+Настраивается пакет libnginx-mod-http-image-filter (1.18.0-3ubuntu1+focal2) …###########################################################################################.......................................]
+Настраивается пакет libnginx-mod-stream-geoip (1.18.0-3ubuntu1+focal2) …#########################################################################################################..............................]
+Настраивается пакет libnginx-mod-http-xslt-filter (1.18.0-3ubuntu1+focal2) …#############################################################################################################......................]
+Обрабатываются триггеры для libc-bin (2.31-0ubuntu9.2) …##########################################################################################################################################.............]
+Обрабатываются триггеры для ufw (0.36-6) …
+Обрабатываются триггеры для systemd (245.4-4ubuntu3.13) …
+Обрабатываются триггеры для man-db (2.9.1-1) …
+Triggering nginx reload ...###########################################################################################################################################################################.........]
+user@user-VirtualBox:~$ sudo dpkg -P nginx
+(Чтение базы данных … на данный момент установлено 231727 файлов и каталогов.)
+Удаляется nginx (1.18.0-3ubuntu1+focal2) …
