@@ -1,0 +1,212 @@
+user@user-VirtualBox:~$ sudo apt-get install
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  geoip-database libgeoip1 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+  libnginx-mod-mail libnginx-mod-stream libnginx-mod-stream-geoip nginx-common nginx-core
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 6 пакетов не обновлено.
+user@user-VirtualBox:~$ sudo apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+sudo: apt-transport-https: команда не найдена
+user@user-VirtualBox:~$ apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+E: Не удалось открыть файл блокировки /var/lib/dpkg/lock-frontend - open (13: Отказано в доступе)
+E: Невозможно получить блокировку внешнего интерфейса dpkg (/var/lib/dpkg/lock-frontend); у вас есть права суперпользователя?
+user@user-VirtualBox:~$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Уже установлен пакет ca-certificates самой новой версии (20210119~20.04.2).
+Уже установлен пакет curl самой новой версии (7.68.0-1ubuntu2.7).
+Уже установлен пакет software-properties-common самой новой версии (0.98.9.5).
+Уже установлен пакет apt-transport-https самой новой версии (2.0.6).
+Уже установлен пакет gnupg-agent самой новой версии (2.2.19-3ubuntu2.1).
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  geoip-database libgeoip1 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter
+  libnginx-mod-mail libnginx-mod-stream libnginx-mod-stream-geoip nginx-common nginx-core
+Для их удаления используйте «sudo apt autoremove».
+user@user-VirtualBox:~$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+OK
+user@user-VirtualBox:~$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu focal InRelease
+Сущ:2 http://ppa.launchpad.net/nginx/stable/ubuntu focal InRelease
+Пол:3 http://ru.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Сущ:5 https://download.docker.com/linux/ubuntu focal InRelease
+Сущ:6 http://security.ubuntu.com/ubuntu focal-security InRelease
+Получено 214 kB за 2с (110 kB/s)
+Чтение списков пакетов… Готово
+user@user-VirtualBox:~$ sudo apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu focal InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Сущ:4 http://ppa.launchpad.net/nginx/stable/ubuntu focal InRelease
+Сущ:5 https://download.docker.com/linux/ubuntu focal InRelease
+Сущ:6 http://security.ubuntu.com/ubuntu focal-security InRelease
+Получено 214 kB за 2с (123 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Может быть обновлено 6 пакетов. Запустите «apt list --upgradable» для их показа.
+user@user-VirtualBox:~$ sudo apt install docker-ce -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей
+Чтение информации о состоянии… Готово
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  geoip-database libgeoip1 libnginx-mod-http-image-filter libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libnginx-mod-stream-geoip nginx-common nginx-core
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  containerd.io docker-ce-cli docker-ce-rootless-extras docker-scan-plugin git git-man liberror-perl pigz slirp4netns
+Предлагаемые пакеты:
+  aufs-tools cgroupfs-mount | cgroup-lite git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb
+  git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras docker-scan-plugin git git-man liberror-perl pigz slirp4netns
+Обновлено 0 пакетов, установлено 10 новых пакетов, для удаления отмечено 0 пакетов, и 6 пакетов не обновлено.
+Необходимо скачать 101 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 441 MB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57,4 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 liberror-perl all 0.17029-1 [26,5 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 git-man all 1:2.25.1-1ubuntu3.2 [884 kB]
+Пол:4 https://download.docker.com/linux/ubuntu focal/stable amd64 containerd.io amd64 1.4.11-1 [23,7 MB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 git amd64 1:2.25.1-1ubuntu3.2 [4 554 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 slirp4netns amd64 0.4.3-1 [74,3 kB]
+Пол:7 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-cli amd64 5:20.10.10~3-0~ubuntu-focal [38,8 MB]
+Пол:8 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce amd64 5:20.10.10~3-0~ubuntu-focal [21,2 MB]
+Пол:9 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-ce-rootless-extras amd64 5:20.10.10~3-0~ubuntu-focal [7 922 kB]
+Пол:10 https://download.docker.com/linux/ubuntu focal/stable amd64 docker-scan-plugin amd64 0.9.0~ubuntu-focal [3 518 kB]
+Получено 101 MB за 43с (2 347 kB/s)
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлен 193571 файл и каталог.)
+Подготовка к распаковке …/0-pigz_2.4-1_amd64.deb …
+Распаковывается pigz (2.4-1) …
+Выбор ранее не выбранного пакета containerd.io.
+Подготовка к распаковке …/1-containerd.io_1.4.11-1_amd64.deb …
+Распаковывается containerd.io (1.4.11-1) …
+Выбор ранее не выбранного пакета docker-ce-cli.
+Подготовка к распаковке …/2-docker-ce-cli_5%3a20.10.10~3-0~ubuntu-focal_amd64.deb …
+Распаковывается docker-ce-cli (5:20.10.10~3-0~ubuntu-focal) …
+Выбор ранее не выбранного пакета docker-ce.
+Подготовка к распаковке …/3-docker-ce_5%3a20.10.10~3-0~ubuntu-focal_amd64.deb …
+Распаковывается docker-ce (5:20.10.10~3-0~ubuntu-focal) …
+Выбор ранее не выбранного пакета docker-ce-rootless-extras.
+Подготовка к распаковке …/4-docker-ce-rootless-extras_5%3a20.10.10~3-0~ubuntu-focal_amd64.deb …
+Распаковывается docker-ce-rootless-extras (5:20.10.10~3-0~ubuntu-focal) …
+Выбор ранее не выбранного пакета docker-scan-plugin.
+Подготовка к распаковке …/5-docker-scan-plugin_0.9.0~ubuntu-focal_amd64.deb …
+Распаковывается docker-scan-plugin (0.9.0~ubuntu-focal) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/6-liberror-perl_0.17029-1_all.deb …
+Распаковывается liberror-perl (0.17029-1) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/7-git-man_1%3a2.25.1-1ubuntu3.2_all.deb …
+Распаковывается git-man (1:2.25.1-1ubuntu3.2) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/8-git_1%3a2.25.1-1ubuntu3.2_amd64.deb …
+Распаковывается git (1:2.25.1-1ubuntu3.2) …
+Выбор ранее не выбранного пакета slirp4netns.
+Подготовка к распаковке …/9-slirp4netns_0.4.3-1_amd64.deb …
+Распаковывается slirp4netns (0.4.3-1) …
+Настраивается пакет slirp4netns (0.4.3-1) …
+Настраивается пакет docker-scan-plugin (0.9.0~ubuntu-focal) …
+Настраивается пакет liberror-perl (0.17029-1) …
+Настраивается пакет containerd.io (1.4.11-1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Настраивается пакет docker-ce-cli (5:20.10.10~3-0~ubuntu-focal) …
+Настраивается пакет pigz (2.4-1) …
+Настраивается пакет git-man (1:2.25.1-1ubuntu3.2) …
+Настраивается пакет docker-ce-rootless-extras (5:20.10.10~3-0~ubuntu-focal) …
+Настраивается пакет docker-ce (5:20.10.10~3-0~ubuntu-focal) …
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Настраивается пакет git (1:2.25.1-1ubuntu3.2) …
+Обрабатываются триггеры для man-db (2.9.1-1) …
+Обрабатываются триггеры для systemd (245.4-4ubuntu3.13) …
+user@user-VirtualBox:~$ docker --help
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/home/user/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default
+                           context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/user/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/user/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/user/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  app*        Docker App (Docker Inc., v0.9.1-beta3)
+  builder     Manage builds
+  buildx*     Build with BuildKit (Docker Inc., v0.6.3-docker)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  scan*       Docker Scan (Docker Inc., v0.9.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+user@user-VirtualBox:~$
